@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Music Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #222;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px;
+    }
+
+    .music-player {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .artist-section {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #222;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Music World</h1>
+    <p>Discover. Listen. Enjoy.</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#music">Music</a>
+    <a href="#artists">Artists</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to My Music Website</h2>
+    <p>This is a place where you can explore and enjoy your favorite music tracks.</p>
+  </section>
+
+  <section id="music">
+    <h2>Listen Now</h2>
+    <div class="music-player">
+      <p><strong>Now Playing:</strong> Sample Track</p>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+
+  <section id="artists">
+    <h2>Featured Artists</h2>
+    <div class="artist-section">
+      <h3>Artist Name</h3>
+      <p>Brief bio or description of the artist goes here. You can talk about their style, popular songs, and more.</p>
+    </div>
+    <div class="artist-section">
+      <h3>Another Artist</h3>
+      <p>This section can be duplicated to feature more artists.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@musicworld.com</p>
+    <p>Follow us on social media for the latest updates!</p>
+  </section>
+
+  <footer>
+    &copy; 2025 My Music World. All rights reserved.
+  </footer>
+
+</body>
+</html>
