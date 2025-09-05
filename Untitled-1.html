@@ -1,15 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Web Game</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      font-family: sans-serif;
+    }
 
-<h1>My First Heading</h1>
-<p>
-    <a href = "https://youtube.com">This</a>
-    is My first paragraph. 9i797
-    <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
-</p>
+    canvas {
+      background: #222;
+      border: 2px solid #fff;
+    }
 
+    #instructions {
+      position: absolute;
+      top: 10px;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="instructions">Use arrow keys to move the box</div>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
 
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
 
-    </body>
+    let box = {
+      x: 200,
+      y: 200,
+      size: 15,
+      color: '#0f0',
+      speed: 3
+    };
+
+    let keys = {
+      ArrowUp: false,
+      ArrowDown: false,
+      ArrowLeft: false,
+      ArrowRight: false
+    };
+
+    document.addEventListener('keydown', e => {
+      if (keys.hasOwnProperty(e.key)) keys[e.key] = true;
+    });
+
+    document.addEventListener('keyup', e => {
+      if (keys.hasOwnProperty(e.key)) keys[e.key] = false;
+    });
+
+    function update() {
+      if (keys.ArrowUp) box.y -= box.speed;
+      if (keys.ArrowDown) box.y += box.speed;
+      if (keys.ArrowLeft) box.x -= box.speed;
+      if (keys.ArrowRight) box.x += box.speed;
+
+      // Keep box inside canvas
+      box.x = Math.max(0, Math.min(canvas.width - box.size, box.x));
+      box.y = Math.max(0, Math.min(canvas.height - box.size, box.y));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = box.color;
+      ctx.fillRect(box.x, box.y, box.size, box.size);
+    }
+
+    function gameLoop() {
+      update();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    gameLoop();
+  </script>
+</body>
 </html>
