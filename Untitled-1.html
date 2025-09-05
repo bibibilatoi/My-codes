@@ -31,18 +31,18 @@
 </head>
 <body>
   <div id="instructions">Use arrow keys to move the box</div>
-  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <canvas id="gameCanvas" width="600" height="600"></canvas>
 
   <script>
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
 
     let box = {
-      x: 200,
-      y: 200,
-      size: 15,
+      x: 150,
+      y: 150,
+      size: 20,
       color: '#0f0',
-      speed: 3
+      speed: 5
     };
 
     let keys = {
